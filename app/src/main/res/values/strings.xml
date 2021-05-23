@@ -4,4 +4,8 @@
     <string name="page_subtitle">Launch deep links to app content</string>
     <string name="asis_your_deeplinks">Your deep links</string>
     <string name="asis_deep_links">Deep Links</string>
+    <string name="asis_done">Done</string>
+    <string name="asis_deep_link">Deep Link</string>
+    <string name="asis_description">Description</string>
+    <string name="asis_title">Title</string>
 </resources>
