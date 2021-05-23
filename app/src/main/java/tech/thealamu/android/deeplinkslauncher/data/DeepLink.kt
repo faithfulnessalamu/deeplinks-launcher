@@ -1,3 +1,3 @@
-package tech.thealamu.android.deeplinkslauncher
+package tech.thealamu.android.deeplinkslauncher.data
 
 data class DeepLink(val id: Int, val title: String, val description: String, val uri: String)

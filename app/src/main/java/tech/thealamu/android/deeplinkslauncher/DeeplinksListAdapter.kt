@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 
 class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
