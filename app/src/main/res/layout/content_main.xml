@@ -38,9 +38,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto"
-            android:text="@string/page_subtitle"
+            android:text="@string/main_page_subtitle"
             android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
             android:textColor="@color/grey" />
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Deeplinks Launcher</string>
     <string name="asis_new">New</string>
-    <string name="page_subtitle">Launch deep links to app content</string>
+    <string name="main_page_subtitle">Invoke a web URI intent or go straight to specific in-app functionality.</string>
     <string name="asis_your_deeplinks">Your deep links</string>
     <string name="asis_deep_links">Deep Links</string>
     <string name="asis_done">Done</string>
