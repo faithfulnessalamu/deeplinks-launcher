@@ -11,7 +11,7 @@ import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.databinding.LayoutDeeplinkItemBinding
 
 class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
-    class ViewHolder(binding: LayoutDeeplinkItemBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: LayoutDeeplinkItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     /**
      * Allows the RecyclerView to determine which items have changed when the [List] of [DeepLink]
@@ -41,6 +41,11 @@ class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHold
      * Replaces the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val deeplink = getItem(position)
+        with(holder.binding) {
+            linkTitle.text = deeplink.title
+            linkDesc.text = deeplink.description
+        }
     }
 
 }
