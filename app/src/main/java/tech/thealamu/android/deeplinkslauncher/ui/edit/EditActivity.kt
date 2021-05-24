@@ -56,8 +56,8 @@ class EditActivity : AppCompatActivity() {
         val desc = binding.content.editDesc.text.toString()
         val link = binding.content.editDeeplink.text.toString()
 
-        var deepLink = DeepLink(title, desc, link)
-        viewModel.saveDeeplink(deepLink)
+        viewModel.saveDeeplink(DeepLink(title, desc, link, sessionId))
+
         finish()
     }
 }

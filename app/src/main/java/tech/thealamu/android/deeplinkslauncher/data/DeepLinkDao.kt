@@ -12,7 +12,7 @@ interface DeepLinkDao {
     suspend fun insertDeeplink(d: DeepLink)
 
     @Update
-    fun updateDeeplink(d: DeepLink)
+    suspend fun updateDeeplink(d: DeepLink)
 
     @Delete
     fun deleteDeeplink(d: DeepLink)
