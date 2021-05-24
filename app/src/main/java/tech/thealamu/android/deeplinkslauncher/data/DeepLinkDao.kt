@@ -9,7 +9,7 @@ interface DeepLinkDao {
     fun getDeeplinks(): LiveData<List<DeepLink>>
 
     @Insert
-    fun insertDeeplink(d: DeepLink)
+    suspend fun insertDeeplink(d: DeepLink)
 
     @Update
     fun updateDeeplink(d: DeepLink)
