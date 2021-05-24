@@ -1,9 +1,11 @@
-package tech.thealamu.android.deeplinkslauncher
+package tech.thealamu.android.deeplinkslauncher.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityMainBinding
+import tech.thealamu.android.deeplinkslauncher.ui.edit.EditActivity
+
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 

@@ -1,4 +1,4 @@
-package tech.thealamu.android.deeplinkslauncher
+package tech.thealamu.android.deeplinkslauncher.ui.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import tech.thealamu.android.deeplinkslauncher.R
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 
 class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
