@@ -3,8 +3,10 @@ package tech.thealamu.android.deeplinkslauncher.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.getAppDatabase
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityMainBinding
 import tech.thealamu.android.deeplinkslauncher.ui.edit.EditActivity
@@ -26,7 +28,11 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
         val adapter = DeeplinksListAdapter(object: OnLinkClickListener {
-            override fun onLinkClick(linkId: Int?) {
+            override fun onLinkClick(deepLink: DeepLink) {
+                Toast.makeText(applicationContext, deepLink.title, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onLinkEdit(linkId: Int?) {
                 navigateToEdit(linkId)
             }
         })
@@ -57,7 +63,8 @@ class MainActivity : AppCompatActivity() {
         val EXTRA_LINK_ID = "extra_link_id"
 
         interface OnLinkClickListener {
-            fun onLinkClick(linkId: Int?)
+            fun onLinkClick(deepLink: DeepLink)
+            fun onLinkEdit(linkId: Int?)
         }
     }
 }

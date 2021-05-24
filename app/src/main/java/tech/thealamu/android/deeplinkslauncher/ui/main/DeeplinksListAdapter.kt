@@ -45,8 +45,13 @@ class DeeplinksListAdapter(val onLinkClickListener: MainActivity.Companion.OnLin
         with(holder.binding) {
             linkTitle.text = deeplink.title
             linkDesc.text = deeplink.description
+
             editLink.setOnClickListener {
-                onLinkClickListener.onLinkClick(deeplink.id)
+                onLinkClickListener.onLinkEdit(deeplink.id)
+            }
+
+            linkRoot.setOnClickListener {
+                onLinkClickListener.onLinkClick(deeplink)
             }
         }
     }
