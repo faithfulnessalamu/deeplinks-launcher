@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import tech.thealamu.android.deeplinkslauncher.data.AppDatabase
+import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.getAppDatabase
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityEditBinding
 
@@ -27,7 +28,12 @@ class EditActivity : AppCompatActivity() {
     }
 
     private fun updateAndFinish() {
-        //TODO: Update repository with data
+        val title = binding.content.editTitle.text.toString()
+        val desc = binding.content.editDesc.text.toString()
+        val link = binding.content.editDeeplink.text.toString()
+
+        var deepLink = DeepLink(title, desc, link)
+        viewModel.saveDeeplink(deepLink)
         finish()
     }
 }
