@@ -25,7 +25,12 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(appDao)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
-        val adapter = DeeplinksListAdapter()
+        val adapter = DeeplinksListAdapter(object: OnLinkClickListener {
+            override fun onLinkClick(linkId: Int?) {
+                navigateToEdit()
+            }
+        })
+
         binding.content.deeplinksRecyclerview.adapter = adapter
         viewModel.getDeeplinks().observe(this, Observer {
             it?.let {
@@ -42,5 +47,11 @@ class MainActivity : AppCompatActivity() {
         // navigate to edit activity
         val intent = Intent(this, EditActivity::class.java)
         startActivity(intent)
+    }
+
+    companion object {
+        interface OnLinkClickListener {
+            fun onLinkClick(linkId: Int?)
+        }
     }
 }

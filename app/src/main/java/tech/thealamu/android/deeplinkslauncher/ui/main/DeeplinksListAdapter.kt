@@ -10,7 +10,7 @@ import tech.thealamu.android.deeplinkslauncher.R
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.databinding.LayoutDeeplinkItemBinding
 
-class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
+class DeeplinksListAdapter(val onLinkClickListener: MainActivity.Companion.OnLinkClickListener) : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
     class ViewHolder(val binding: LayoutDeeplinkItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     /**
@@ -45,6 +45,9 @@ class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHold
         with(holder.binding) {
             linkTitle.text = deeplink.title
             linkDesc.text = deeplink.description
+            editLink.setOnClickListener {
+                onLinkClickListener.onLinkClick(deeplink.id)
+            }
         }
     }
 
