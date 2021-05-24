@@ -1,5 +1,6 @@
 package tech.thealamu.android.deeplinkslauncher.ui.edit
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -13,4 +14,6 @@ class EditViewModel(val dao: DeepLinkDao): ViewModel() {
             dao.insertDeeplink(d)
         }
     }
+
+    fun getDeeplink(id: Int): LiveData<DeepLink> = dao.getDeeplinkWithID(id)
 }

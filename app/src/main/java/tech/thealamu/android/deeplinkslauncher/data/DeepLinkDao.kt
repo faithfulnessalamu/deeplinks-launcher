@@ -16,4 +16,7 @@ interface DeepLinkDao {
 
     @Delete
     fun deleteDeeplink(d: DeepLink)
+
+    @Query("SELECT * FROM deeplinks WHERE id=:id")
+    fun getDeeplinkWithID(id: Int): LiveData<DeepLink>
 }
