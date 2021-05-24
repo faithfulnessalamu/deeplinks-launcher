@@ -1,6 +1,7 @@
 package tech.thealamu.android.deeplinkslauncher.ui.main
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = DeeplinksListAdapter(object: OnLinkClickListener {
             override fun onLinkClick(deepLink: DeepLink) {
-                Toast.makeText(applicationContext, deepLink.title, Toast.LENGTH_SHORT).show()
+                executeDeepLink(deepLink.uri)
             }
 
             override fun onLinkEdit(linkId: Int?) {
@@ -47,6 +48,12 @@ class MainActivity : AppCompatActivity() {
         binding.btnNew.setOnClickListener {
             navigateToEdit()
         }
+    }
+
+    private fun executeDeepLink(uri: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(uri)
+        startActivity(Intent.createChooser(intent, "Choose an app"))
     }
 
     private fun navigateToEdit(linkId: Int? = null) {
