@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import tech.thealamu.android.deeplinkslauncher.R
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
+import tech.thealamu.android.deeplinkslauncher.databinding.LayoutDeeplinkItemBinding
 
 class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
+    class ViewHolder(binding: LayoutDeeplinkItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     /**
      * Allows the RecyclerView to determine which items have changed when the [List] of [DeepLink]
@@ -31,7 +32,9 @@ class DeeplinksListAdapter : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHold
      */
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_deeplink_item, parent, false))
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = LayoutDeeplinkItemBinding.inflate(inflater, parent, false)
+        return ViewHolder(binding)
     }
 
     /**
