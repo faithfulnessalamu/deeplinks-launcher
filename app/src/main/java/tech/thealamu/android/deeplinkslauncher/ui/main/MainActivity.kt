@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = DeeplinksListAdapter(object: OnLinkClickListener {
             override fun onLinkClick(linkId: Int?) {
-                navigateToEdit()
+                navigateToEdit(linkId)
             }
         })
 
@@ -43,13 +43,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToEdit() {
+    private fun navigateToEdit(linkId: Int? = null) {
         // navigate to edit activity
         val intent = Intent(this, EditActivity::class.java)
+        // send linkId if it exists
+        linkId?.let {
+            intent.putExtra(MainActivity.EXTRA_LINK_ID, linkId)
+        }
         startActivity(intent)
     }
 
     companion object {
+        val EXTRA_LINK_ID = "extra_link_id"
+
         interface OnLinkClickListener {
             fun onLinkClick(linkId: Int?)
         }
