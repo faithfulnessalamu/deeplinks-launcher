@@ -3,6 +3,7 @@ package tech.thealamu.android.deeplinkslauncher.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import tech.thealamu.android.deeplinkslauncher.data.getAppDatabase
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityMainBinding
@@ -24,7 +25,13 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(appDao)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
-        binding.content.deeplinksRecyclerview.adapter = DeeplinksListAdapter()
+        val adapter = DeeplinksListAdapter()
+        binding.content.deeplinksRecyclerview.adapter = adapter
+        viewModel.getDeeplinks().observe(this, Observer {
+            it?.let {
+                adapter.submitList(it)
+            }
+        })
 
         binding.btnNew.setOnClickListener {
             navigateToEdit()
