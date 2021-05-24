@@ -2,8 +2,10 @@ package tech.thealamu.android.deeplinkslauncher.ui.edit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import tech.thealamu.android.deeplinkslauncher.R
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.getAppDatabase
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityEditBinding
@@ -34,6 +36,13 @@ class EditActivity : AppCompatActivity() {
                 sessionId = tmpId
                 populateInputs(sessionId!!)
             }
+        }
+
+        if (sessionId == null) {
+            //disable add to launcher feature
+            binding.menuItemAddlauncher.visibility = View.GONE
+            //disable delete feature
+            binding.menuItemDelete.visibility = View.GONE
         }
     }
 

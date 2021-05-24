@@ -8,4 +8,5 @@
     <string name="asis_deep_link">Deep Link</string>
     <string name="asis_description">Description</string>
     <string name="asis_title">Title</string>
+    <string name="asis_save">Save</string>
 </resources>
