@@ -37,6 +37,17 @@
                     android:focusable="true"
                     android:background="?attr/selectableItemBackgroundBorderless"/>
 
+                <ImageView
+                    android:id="@+id/menu_item_delete"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_round_delete_outline_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.Toolbar>

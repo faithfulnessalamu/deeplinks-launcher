@@ -26,6 +26,18 @@ class EditActivity : AppCompatActivity() {
         val viewModelFactory = EditViewModelFactory(appDao)
         viewModel = ViewModelProvider(this, viewModelFactory).get(EditViewModel::class.java)
 
+        registerListeners()
+
+        intent?.let { intent ->
+            val tmpId = intent.getIntExtra(MainActivity.EXTRA_LINK_ID, -1)
+            if (tmpId != -1) {
+                sessionId = tmpId
+                populateInputs(sessionId!!)
+            }
+        }
+    }
+
+    private fun registerListeners() {
         binding.btnDone.setOnClickListener {
             updateAndFinish()
         }
@@ -34,12 +46,12 @@ class EditActivity : AppCompatActivity() {
             finish()
         }
 
-        intent?.let { intent ->
-            val tmpId = intent.getIntExtra(MainActivity.EXTRA_LINK_ID, -1)
-            if (tmpId != -1) {
-                sessionId = tmpId
-                populateInputs(sessionId!!)
-            }
+        binding.menuItemDelete.setOnClickListener {
+            // just close if we aren't editing an existing link
+            if (sessionId == null) finish()
+            // remove this deep link
+            viewModel.deleteDeeplink(DeepLink("", "", "", sessionId))
+            finish()
         }
     }
 

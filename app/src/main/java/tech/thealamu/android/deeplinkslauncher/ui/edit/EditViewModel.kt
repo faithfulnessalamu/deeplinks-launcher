@@ -8,7 +8,7 @@ import tech.thealamu.android.deeplinkslauncher.data.AppDatabase
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.DeepLinkDao
 
-class EditViewModel(val dao: DeepLinkDao): ViewModel() {
+class EditViewModel(val dao: DeepLinkDao) : ViewModel() {
     fun saveDeeplink(d: DeepLink) {
         if (d.id == null) {
             insertNewDeeplink(d)
@@ -23,9 +23,15 @@ class EditViewModel(val dao: DeepLinkDao): ViewModel() {
         }
     }
 
-    fun updateExistingDeeplink(d: DeepLink){
+    fun updateExistingDeeplink(d: DeepLink) {
         viewModelScope.launch {
             dao.updateDeeplink(d)
+        }
+    }
+
+    fun deleteDeeplink(d: DeepLink) {
+        viewModelScope.launch {
+            dao.deleteDeeplink(d)
         }
     }
 
