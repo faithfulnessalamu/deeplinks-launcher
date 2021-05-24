@@ -30,6 +30,10 @@ class EditActivity : AppCompatActivity() {
             updateAndFinish()
         }
 
+        binding.menuItemClose.setOnClickListener {
+            finish()
+        }
+
         intent?.let { intent ->
             val tmpId = intent.getIntExtra(MainActivity.EXTRA_LINK_ID, -1)
             if (tmpId != -1) {
