@@ -3,6 +3,7 @@ package tech.thealamu.android.deeplinkslauncher.ui.edit
 import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
+import android.graphics.drawable.Icon
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -89,6 +90,7 @@ class EditActivity : AppCompatActivity() {
     private fun buildShortcutInfo(d: DeepLink): ShortcutInfo {
         return ShortcutInfo.Builder(this, d.id.toString())
             .setShortLabel(d.title)
+            .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
             .setIntent(Intent(Intent.ACTION_VIEW, Uri.parse(d.uri)))
             .build()
     }
