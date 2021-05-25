@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Dao
 interface DeepLinkDao {
-    @Query("SELECT * FROM deeplinks")
+    @Query("SELECT * FROM deeplinks ORDER BY id DESC")
     fun getDeeplinks(): LiveData<List<DeepLink>>
 
     @Insert
