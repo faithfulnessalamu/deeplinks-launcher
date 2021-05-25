@@ -1,16 +1,15 @@
 package tech.thealamu.android.deeplinkslauncher.ui.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import tech.thealamu.android.deeplinkslauncher.R
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.databinding.LayoutDeeplinkItemBinding
 
-class DeeplinksListAdapter(val onLinkClickListener: MainActivity.Companion.OnLinkClickListener) : ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback){
+class DeeplinksListAdapter(val onLinkClickListener: MainActivity.Companion.OnLinkClickListener) :
+    ListAdapter<DeepLink, DeeplinksListAdapter.ViewHolder>(DiffCallback) {
     class ViewHolder(val binding: LayoutDeeplinkItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     /**
@@ -30,8 +29,10 @@ class DeeplinksListAdapter(val onLinkClickListener: MainActivity.Companion.OnLin
     /**
      * Create new [RecyclerView] item views (invoked by the layout manager)
      */
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = LayoutDeeplinkItemBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)

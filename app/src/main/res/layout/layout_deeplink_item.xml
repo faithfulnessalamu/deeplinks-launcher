@@ -21,21 +21,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="12dp"
-            tools:text="Something"
             android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Something" />
 
         <TextView
             android:id="@+id/link_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            tools:text="Do something"
             android:textColor="@color/grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/link_title"
-            app:layout_constraintTop_toBottomOf="@+id/link_title" />
+            app:layout_constraintTop_toBottomOf="@+id/link_title"
+            tools:text="Do something" />
 
         <ImageView
             android:id="@+id/edit_link"

@@ -9,8 +9,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
-        android:theme="@style/Theme.DeeplinksLauncher.AppBarOverlay">
+        android:theme="@style/Theme.DeeplinksLauncher.AppBarOverlay"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,14 +21,16 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"
-        android:id="@+id/content"/>
+    <include
+        android:id="@+id/content"
+        layout="@layout/content_main" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_new"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="16dp"
         android:text="@string/asis_new"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
@@ -36,8 +38,7 @@
         app:icon="@drawable/ic_round_add_24"
         app:iconSize="40dp"
         app:iconTint="@color/teal_700"
-        android:layout_marginEnd="16dp"
-        android:layout_gravity="top|end"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.DeeplinksLauncher.Round" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

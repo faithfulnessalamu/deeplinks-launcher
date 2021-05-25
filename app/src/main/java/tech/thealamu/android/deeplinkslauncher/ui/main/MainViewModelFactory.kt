@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import tech.thealamu.android.deeplinkslauncher.data.DeepLinkDao
 
 @Suppress("UNCHECKED_CAST")
-class MainViewModelFactory(val dao: DeepLinkDao): ViewModelProvider.Factory {
+class MainViewModelFactory(val dao: DeepLinkDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(dao) as T

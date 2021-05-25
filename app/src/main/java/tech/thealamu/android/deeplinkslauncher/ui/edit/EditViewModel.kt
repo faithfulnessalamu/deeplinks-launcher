@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import tech.thealamu.android.deeplinkslauncher.data.AppDatabase
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.DeepLinkDao
 

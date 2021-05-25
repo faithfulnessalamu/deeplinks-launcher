@@ -78,8 +78,8 @@
         android:layout_marginEnd="16dp"
         android:text="@string/asis_done"
         android:textAllCaps="false"
-        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
+        android:textColor="@color/white"
         app:backgroundTint="@color/teal_700" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

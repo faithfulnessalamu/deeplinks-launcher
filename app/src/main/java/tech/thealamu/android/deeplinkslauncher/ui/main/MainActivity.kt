@@ -2,17 +2,14 @@ package tech.thealamu.android.deeplinkslauncher.ui.main
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import tech.thealamu.android.deeplinkslauncher.data.DeepLink
 import tech.thealamu.android.deeplinkslauncher.data.getAppDatabase
 import tech.thealamu.android.deeplinkslauncher.databinding.ActivityMainBinding
 import tech.thealamu.android.deeplinkslauncher.ui.edit.EditActivity
-import tech.thealamu.android.deeplinkslauncher.ui.edit.EditViewModel
-import tech.thealamu.android.deeplinkslauncher.ui.edit.EditViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(appDao)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
-        val adapter = DeeplinksListAdapter(object: OnLinkClickListener {
+        val adapter = DeeplinksListAdapter(object : OnLinkClickListener {
             override fun onLinkClick(deepLink: DeepLink) {
                 executeDeepLink(deepLink.uri)
             }
