@@ -15,6 +15,6 @@ This app is a *deep link* launcher.
 
 ## Here's what it looks like
 ## Install
-
+See [releases](https://github.com/thealamu/deeplinks-launcher/releases)
 ## 
 UI heavily inspired by Google's *Routines* UI
