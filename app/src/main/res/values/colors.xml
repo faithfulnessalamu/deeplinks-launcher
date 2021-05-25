@@ -2,6 +2,7 @@
 <resources>
     <color name="deep_purple_50">#ede7f6</color>
     <color  name="deep_purple_50_dark">#bbb5c3</color>
+    <color name="deep_purple_100_dark">#a094b7</color>
     <color name="grey">#817F7F</color>
 
     <color name="purple_200">#FFBB86FC</color>
